@@ -247,6 +247,49 @@
             color: var(--gray);
         }
 
+         /* ========== GALLERY SECTION ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
         /* Contact */
         .contact-section {
             background: var(--primary);
@@ -452,6 +495,37 @@
             <div class="interest-item">Sports & Fitness</div>
         </div>
     </section>
+
+     <!-- ========== GALLERY SECTION ========== -->
+    <section id="gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="1000001402.jpg" alt="Photo 1">
+                <div class="gallery-overlay">My Photo</div>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="1000001402.jpg" alt="Photo 2">
+                <div class="gallery-overlay">My Photo</div>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="1000001402.jpg" alt="Photo 3">
+                <div class="gallery-overlay">My Photo</div>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="1000001402.jpg" alt="Photo 4">
+                <div class="gallery-overlay">My Photo</div>
+            </div>
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="1000001402.jpg" alt="Photo 5">
+                <div class="gallery-overlay">My Photo</div>
+            </div>
+            </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
